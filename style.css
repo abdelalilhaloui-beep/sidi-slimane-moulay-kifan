@@ -1,0 +1,902 @@
+/* =====================================================
+   الموقع الإلكتروني لجماعة سيدي سليمان مول الكيفان
+   STYLE.CSS
+===================================================== */
+
+
+/* =====================================================
+   إعدادات عامة
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Tahoma", sans-serif;
+    direction: rtl;
+    background: #f5f7f6;
+    color: #1d2b24;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   HEADER - الشريط العلوي
+===================================================== */
+
+.header {
+    height: 78px;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    direction: rtl;
+
+    border-bottom: 1px solid #e8e8e8;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    position: relative;
+    z-index: 100;
+}
+
+
+/* =====================================================
+   الشعار واسم الجماعة
+===================================================== */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    white-space: nowrap;
+}
+
+
+/* الشعار المؤقت */
+
+.logo-mark {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: #126b45;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    border: 3px solid #c59b45;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+/* اسم الجماعة */
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    line-height: 1.3;
+}
+
+.brand-text span {
+    font-size: 12px;
+
+    color: #c59b45;
+
+    font-weight: bold;
+}
+
+.brand-text strong {
+    font-size: 16px;
+
+    color: #126b45;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   القائمة الرئيسية
+===================================================== */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: #26352e;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    padding: 8px 0;
+
+    transition: 0.3s ease;
+}
+
+
+/* عند تمرير الماوس */
+
+nav a:hover {
+    color: #126b45;
+}
+
+
+/* الصفحة الحالية */
+
+nav a.active {
+    color: #126b45;
+}
+
+
+/* الخط الذهبي تحت الصفحة الحالية */
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    left: 0;
+
+    bottom: 0;
+
+    height: 2px;
+
+    background: #c59b45;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   HERO - البانر الرئيسي
+===================================================== */
+
+.hero {
+    min-height: 560px;
+
+    background-image:
+        linear-gradient(90deg,
+            rgba(0, 60, 40, 0.05),
+            rgba(0, 60, 40, 0.68)),
+        url("images/commune.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 70px 8%;
+}
+
+
+/* محتوى البانر */
+
+.hero-content {
+    color: white;
+
+    max-width: 650px;
+
+    margin-right: 0;
+
+    margin-left: auto;
+
+    text-align: right;
+}
+
+
+/* اسم الجماعة فوق العنوان */
+
+.hero-content>p:first-child {
+    font-size: 18px;
+
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+
+/* العنوان الرئيسي */
+
+.hero h1 {
+    font-size: 52px;
+
+    line-height: 1.3;
+
+    margin: 15px 0 20px;
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* الوصف */
+
+.hero .description {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #ffffff;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   أزرار البانر
+===================================================== */
+
+.buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* زر المشاريع */
+
+.btn.primary {
+    background: #c59b45;
+
+    color: #ffffff;
+
+    border: 2px solid #c59b45;
+}
+
+.btn.primary:hover {
+    background: #b18738;
+
+    border-color: #b18738;
+
+    transform: translateY(-2px);
+}
+
+
+/* زر الشفافية */
+
+.btn.secondary {
+    background: transparent;
+
+    color: #ffffff;
+
+    border: 2px solid #ffffff;
+}
+
+.btn.secondary:hover {
+    background: #ffffff;
+
+    color: #126b45;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   قسم خدمات الجماعة
+===================================================== */
+
+.services {
+    padding: 70px 8%;
+
+    background: #f5f7f6;
+
+    text-align: center;
+}
+
+
+/* عنوان القسم */
+
+.services h2 {
+    font-size: 32px;
+
+    margin-bottom: 40px;
+
+    color: #126b45;
+
+    font-weight: 800;
+}
+
+
+/* البطاقات */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* البطاقة */
+
+.card {
+    background: #ffffff;
+
+    padding: 35px 25px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    transition: all 0.3s ease;
+
+    border-top: 3px solid transparent;
+}
+
+
+/* تأثير البطاقة */
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-top-color: #c59b45;
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+/* عنوان البطاقة */
+
+.card h3 {
+    color: #126b45;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+/* نص البطاقة */
+
+.card p {
+    color: #555555;
+
+    line-height: 1.9;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #103d2b;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =====================================================
+   RESPONSIVE - الأجهزة اللوحية
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 4%;
+    }
+
+    nav {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - الهاتف
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+
+    .header {
+        height: auto;
+
+        padding: 14px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    /* الشعار */
+
+    .brand {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .logo-mark {
+        width: 42px;
+        height: 42px;
+
+        font-size: 22px;
+    }
+
+
+    .brand-text strong {
+        font-size: 15px;
+    }
+
+
+    /* القائمة */
+
+    nav {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 620px;
+
+        padding: 50px 25px;
+
+        justify-content: center;
+
+        background-position: center center;
+    }
+
+
+    .hero-content {
+        width: 100%;
+
+        max-width: 600px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+
+    .hero-content>p:first-child {
+        font-size: 16px;
+    }
+
+
+    .hero h1 {
+        font-size: 38px;
+
+        line-height: 1.45;
+    }
+
+
+    .hero .description {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    /* الأزرار */
+
+    .buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+
+    .btn {
+        padding: 12px 22px;
+
+        font-size: 13px;
+    }
+
+
+    /* الخدمات */
+
+    .services {
+        padding: 55px 20px;
+    }
+
+
+    .services h2 {
+        font-size: 28px;
+
+        margin-bottom: 30px;
+    }
+
+
+    .cards {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .card {
+        padding: 28px 20px;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE - الهواتف الصغيرة
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .header {
+        padding: 12px 15px;
+    }
+
+
+    .brand-text span {
+        font-size: 10px;
+    }
+
+
+    .brand-text strong {
+        font-size: 13px;
+    }
+
+
+    nav {
+        gap: 8px 13px;
+    }
+
+
+    nav a {
+        font-size: 12px;
+    }
+
+
+    .hero {
+        min-height: 600px;
+
+        padding: 40px 18px;
+
+        background-position: center;
+    }
+
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+
+    .hero-content>p:first-child {
+        font-size: 14px;
+    }
+
+
+    .hero .description {
+        font-size: 14px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .btn {
+        width: 200px;
+
+        text-align: center;
+    }
+
+
+    .services h2 {
+        font-size: 25px;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background: linear-gradient(135deg, #073b2d, #075a45);
+    color: #ffffff;
+    margin-top: 60px;
+    direction: rtl;
+    border-top: 4px solid #d4a843;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 55px 30px 40px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+}
+
+.footer-column h3 {
+    color: #d9b45a;
+    font-size: 20px;
+    margin-bottom: 22px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-column h3::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 45px;
+    height: 3px;
+
+    background: #d9b45a;
+    border-radius: 5px;
+}
+
+.footer-column p {
+    color: #e8eeee;
+    font-size: 14px;
+    line-height: 1.9;
+    margin: 8px 0;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #f2f5f4;
+    text-decoration: none;
+
+    font-size: 14px;
+    margin: 11px 0;
+
+    transition: 0.3s;
+}
+
+.footer-column a:hover {
+    color: #d9b45a;
+    transform: translateX(-6px);
+}
+
+
+/* زر الاتصال */
+
+.contact-button {
+    display: inline-block !important;
+
+    background: #d9a93f;
+    color: #ffffff !important;
+
+    padding: 11px 22px;
+    border-radius: 7px;
+
+    margin-top: 15px !important;
+
+    text-align: center;
+
+    transition: 0.3s !important;
+}
+
+.contact-button:hover {
+    background: #ffffff;
+    color: #075a45 !important;
+
+    transform: translateY(-2px) !important;
+}
+
+
+/* شبكات التواصل */
+
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 50%;
+
+    color: white !important;
+
+    font-weight: bold;
+
+    margin: 0 !important;
+}
+
+.social-links a:hover {
+    background: #d9a93f;
+    border-color: #d9a93f;
+
+    transform: translateY(-4px) !important;
+}
+
+
+/* الجزء السفلي */
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 20px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    font-size: 13px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #dce7e3;
+}
+
+.footer-bottom div {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.footer-bottom a {
+    color: #dce7e3;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    color: #d9b45a;
+}
+
+.footer-bottom span {
+    color: #718a82;
+}
+
+
+/* =========================
+   الهاتف
+========================= */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        padding: 40px 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
