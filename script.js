@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const files = await response.json();
+    console.log("GitHub files:", files);
     const markdownFiles = files.filter(file =>
       file.type === "file" && file.name.endsWith(".md")
     );
