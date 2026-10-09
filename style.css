@@ -900,3 +900,49 @@ footer p {
     }
 
 }
+
+.posts-section .section-header p {
+    color: #666;
+    line-height: 1.8;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.post-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-card .post-content {
+    padding: 18px;
+}
+
+.post-card h3 {
+    color: #075b43;
+    margin: 0 0 12px;
+    line-height: 1.7;
+}
+
+.post-card p {
+    color: #555;
+    line-height: 1.8;
+}
+
+.post-card .post-date {
+    color: #888;
+    font-size: 13px;
+}
