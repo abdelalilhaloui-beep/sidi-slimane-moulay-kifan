@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   container.innerHTML = "<p>جاري تحميل التدوينات...</p>";
 
   const repository =
-    "https://api.github.com/repos/abdelalihaloui-beep/sidi-slimane-moulay-kifan";
-
+    "https://api.github.com/repos/abdelalilhaloui-beep/sidi-slimane-moulay-kifan";
   function getField(metadata, name) {
     const match = metadata.match(
       new RegExp("^" + name + ":\\s*(.*)$", "m")
@@ -34,7 +33,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     );
 
     if (!response.ok) {
-      throw new Error("تعذر الوصول إلى ملفات التدوينات في GitHub");
+      throw new Error(
+        `GitHub API: ${response.status} - ${response.statusText}`
+      );
     }
 
     const files = await response.json();
