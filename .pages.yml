@@ -1,0 +1,48 @@
+
+media:
+  input: images/uploads
+  output: /images/uploads
+
+content:
+  - name: posts
+    label: التدوينات ومشاكل الساكنة
+    type: collection
+    path: content/posts
+    format: yaml-frontmatter
+    view:
+      primary: title
+      fields: [title, category, date, published]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: عنوان التدوينة
+        type: string
+        required: true
+
+      - name: category
+        label: القسم
+        type: string
+        required: true
+
+      - name: date
+        label: تاريخ النشر
+        type: date
+        required: true
+
+      - name: summary
+        label: ملخص التدوينة
+        type: text
+
+      - name: image
+        label: الصورة الرئيسية
+        type: image
+
+      - name: published
+        label: نشر التدوينة
+        type: boolean
+
+      - name: body
+        label: محتوى التدوينة
+        type: rich-text
+        required: true
