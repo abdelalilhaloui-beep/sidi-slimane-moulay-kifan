@@ -394,6 +394,40 @@ nav a.active::after {
     border-top: 3px solid transparent;
 }
 
+/* الحفاظ على شكل البطاقة عندما تكون رابطاً */
+a.card {
+    display: block;
+    box-sizing: border-box;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    padding: 22px 18px;
+    min-height: 135px;
+    border-radius: 14px;
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+a.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 75, 55, 0.12);
+}
+
+a.card h3 {
+    color: #08764f;
+    margin-bottom: 10px;
+}
+
+a.card p {
+    color: #666;
+    line-height: 1.8;
+}
+
+a.card:focus-visible {
+    outline: 2px solid #c9a34a;
+    outline-offset: 3px;
+}
 
 /* تأثير البطاقة */
 
