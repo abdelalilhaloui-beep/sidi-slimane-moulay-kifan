@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تفاصيل التدوينات والأخبار المحلية لجماعة سيدي سليمان مول الكيفان">
+    <title>تفاصيل التدوينة | جماعة سيدي سليمان مول الكيفان</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .article-page {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .article-box {
+            background: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, .07);
+        }
+
+        .article-category {
+            color: #087548;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .article-title {
+            color: #075b43;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .article-meta {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .article-image {
+            display: none;
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .article-content {
+            color: #333;
+            font-size: 17px;
+            line-height: 2.1;
+            overflow-wrap: anywhere;
+        }
+
+        .article-content h2,
+        .article-content h3 {
+            color: #075b43;
+            margin-top: 28px;
+        }
+
+        .article-content ul {
+            padding-right: 25px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #075b43;
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+            .article-page {
+                margin: 25px auto;
+                padding: 0 12px;
+            }
+
+            .article-box {
+                padding: 20px;
+            }
+
+            .article-content {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="article-page">
+        <article class="article-box">
+            <div id="article-status">جاري تحميل التدوينة...</div>
+
+            <div id="article-details" hidden>
+                <div id="article-category" class="article-category"></div>
+                <h1 id="article-title" class="article-title"></h1>
+                <div id="article-date" class="article-meta"></div>
+                <img id="article-image" class="article-image" alt="">
+                <div id="article-content" class="article-content"></div>
+            </div>
+
+            <a class="back-link" href="../index.html#posts">
+                ← العودة إلى التدوينات
+            </a>
+        </article>
+    </main>
+
+    <script>
+        function escapeHTML(value) {
+            return String(value).replace(/[&<>"']/g, char => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+            })[char]);
+        }
+
+        function markdownToHTML(text) {
+            let lines = text.split(/\r?\n/);
+            let html = [];
+            let paragraph = [];
+            let inList = false;
+
+            function flushParagraph() {
+                if (paragraph.length) {
+                    html.push("<p>" + escapeHTML(paragraph.join(" ")) + "</p>");
+                    paragraph = [];
+                }
+            }
+
+            function closeList() {
+                if (inList) {
+                    html.push("</ul>");
+                    inList = false;
+                }
+            }
+
+            for (const line of lines) {
+                const trimmed = line.trim();
+
+                if (!trimmed || trimmed === "---") {
+                    flushParagraph();
+                    closeList();
+                    continue;
+                }
+
+                const heading = trimmed.match(/^(#{1,3})\s+(.+)$/);
+
+                if (heading) {
+                    flushParagraph();
+                    closeList();
+                    const level = heading[1].length;
+                    html.push(`<h${level}>${escapeHTML(heading[2])}</h${level}>`);
+                    continue;
+                }
+
+                const item = trimmed.match(/^[-*]\s+(.+)$/);
+
+                if (item) {
+                    flushParagraph();
+                    if (!inList) {
+                        html.push("<ul>");
+                        inList = true;
+                    }
+                    html.push("<li>" + escapeHTML(item[1]) + "</li>");
+                    continue;
+                }
+
+                paragraph.push(trimmed);
+            }
+
+            flushParagraph();
+            closeList();
+            return html.join("\n");
+        }
+
+        async function loadArticle() {
+            const params = new URLSearchParams(window.location.search);
+            const file = params.get("file");
+            const status = document.getElementById("article-status");
+
+            if (!file || !/^[a-zA-Z0-9_-]+\.md$/.test(file)) {
+                status.textContent = "رابط التدوينة غير صالح.";
+                return;
+            }
+
+            try {
+                const response = await fetch("../content/posts/" + file);
+
+                if (!response.ok) {
+                    throw new Error("تعذر العثور على التدوينة.");
+                }
+
+                const markdown = await response.text();
+                const parts = markdown.split(/^---\s*$/m);
+                const metadata = parts.length >= 3 ? parts[1] : "";
+                const body = parts.length >= 3 ? parts.slice(2).join("\n") : markdown;
+
+                function getField(name) {
+                    const match = metadata.match(new RegExp("^" + name + ":\\s*(.*)$", "m"));
+                    return match ? match[1].trim().replace(/^["']|["']$/g, "") : "";
+                }
+
+                if (getField("published").toLowerCase() !== "true") {
+                    status.textContent = "هذه التدوينة غير منشورة حاليًا.";
+                    return;
+                }
+
+                const title = getField("title") || "تدوينة محلية";
+                const category = getField("category");
+                const date = getField("date");
+                const image = getField("image");
+
+                document.getElementById("article-title").textContent = title;
+                document.getElementById("article-category").textContent = category;
+                document.getElementById("article-date").textContent = date;
+                document.getElementById("article-content").innerHTML = markdownToHTML(body);
+
+                if (image) {
+                    const imageElement = document.getElementById("article-image");
+                    imageElement.src = image.startsWith("/") ? ".." + image : image;
+                    imageElement.alt = title;
+                    imageElement.style.display = "block";
+                }
+
+                document.getElementById("article-details").hidden = false;
+                status.remove();
+                document.title = title + " | جماعة سيدي سليمان مول الكيفان";
+            } catch (error) {
+                status.textContent = "تعذر تحميل التدوينة. تحقق من نشر الملف ومساره.";
+                console.error(error);
+            }
+        }
+
+        loadArticle();
+    </script>
+</body>
+
+</html>
