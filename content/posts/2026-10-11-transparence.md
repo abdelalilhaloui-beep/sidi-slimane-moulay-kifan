@@ -1,8 +1,10 @@
+
+---
 title: "الشفافية والحق في الحصول على المعلومات"
 category: "الشفافية"
 date: 2026-10-11
 summary: "نتابع ميزانية الجماعة والمشاريع والصفقات والمقررات، ونعمل على تسهيل وصول المواطنين إلى المعلومات."
-image: /images/uploads/images.jpg
+image: /images/image.jpg
 published: true
 ---
 
