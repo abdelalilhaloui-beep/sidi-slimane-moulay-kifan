@@ -2760,3 +2760,18 @@ header.header>nav a.active {
         font-size: 14px;
     }
 }
+
+/* تحسين ظهور باب الجماعة في الهاتف */
+@media screen and (max-width: 768px) {
+    .hero {
+        background-position: center center;
+    }
+}
+
+/* إظهار باب الجماعة في واجهة الهاتف */
+@media screen and (max-width: 768px) {
+    .hero {
+        background-position: center 60%;
+        background-size: cover;
+    }
+}
