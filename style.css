@@ -2752,6 +2752,49 @@ header.header>nav a.active {
     }
 }
 
+/* تحسين التوازن العام في الهاتف */
+@media (max-width: 700px) {
+    header.header {
+        gap: 0;
+    }
+
+    header.header>nav {
+        padding-top: 4px;
+        padding-bottom: 8px;
+        row-gap: 2px;
+    }
+
+    header.header>nav a {
+        min-height: 40px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .hero {
+        min-height: 620px;
+    }
+
+    .hero-content {
+        padding: 28px 18px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(30px, 8vw, 40px);
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .hero-content p {
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+
+    .hero-content .btn,
+    .hero-content a {
+        min-height: 48px;
+    }
+}
+
 /* ضبط صورة الجماعة في الهاتف */
 @media screen and (max-width: 768px) {
     .hero {
