@@ -2809,3 +2809,36 @@ header.header>nav a.active {
         padding: 2px;
     }
 }
+
+/* أيقونة الجماعة في الهيدر */
+.header .logo-mark {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    border: 2px solid #bd963f;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .logo-mark img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .header .logo-mark {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+}
