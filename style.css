@@ -3316,3 +3316,39 @@ a.card:nth-child(3) .icon {
         font-size: 15px;
     }
 }
+
+/* تحسين القراءة داخل بطاقات الخدمات */
+.cards .card h3 {
+    font-size: 22px;
+    line-height: 1.7;
+    color: #104b36;
+}
+
+.cards .card p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #35483d;
+}
+
+.cards .card .card-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: #795b1d;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .cards .card h3 {
+        font-size: 20px;
+    }
+
+    .cards .card p {
+        font-size: 15px;
+    }
+
+    .cards .card .card-link {
+        font-size: 15px;
+    }
+}
