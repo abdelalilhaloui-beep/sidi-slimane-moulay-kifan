@@ -3138,3 +3138,112 @@ a.card:hover {
         line-height: 1.9 !important;
     }
 }
+
+/* خلفيات مميزة لأيقونات الخدمات */
+.card .service-icon,
+.card .icon,
+a.card .service-icon,
+a.card .icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #d7e9dd;
+    color: #145c43;
+    font-size: 29px;
+}
+
+/* تمييز بطاقة الشفافية */
+.card:nth-child(2) .service-icon,
+.card:nth-child(2) .icon,
+a.card:nth-child(2) .service-icon,
+a.card:nth-child(2) .icon {
+    background: #f1e5c9;
+    color: #87651e;
+}
+
+/* تمييز خدمات المواطنين */
+.card:nth-child(3) .service-icon,
+.card:nth-child(3) .icon,
+a.card:nth-child(3) .service-icon,
+a.card:nth-child(3) .icon {
+    background: #dce9f0;
+    color: #315e76;
+}
+
+/* حجم متوازن على الهاتف */
+@media (max-width: 600px) {
+
+    .card .service-icon,
+    .card .icon,
+    a.card .service-icon,
+    a.card .icon {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+        border-radius: 13px;
+    }
+}
+
+/* خلفيات احترافية لأيقونات بطاقات الجماعة */
+.cards .card-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #d7e9dd;
+    color: #145c43;
+    border: 1px solid #c4d8ca;
+    border-radius: 16px;
+
+    font-size: 29px;
+    line-height: 1;
+    box-shadow: 0 3px 9px rgba(20, 70, 48, 0.08);
+}
+
+/* الشفافية: لمسة ذهبية */
+.cards .card:nth-child(2) .card-icon {
+    background: #f1e5c9;
+    border-color: #e3d2a9;
+}
+
+/* خدمات المواطنين */
+.cards .card:nth-child(3) .card-icon {
+    background: #dce9f0;
+    border-color: #c6d9e4;
+}
+
+/* مشاكل الساكنة */
+.cards .card:nth-child(4) .card-icon {
+    background: #f2dfdf;
+    border-color: #e5caca;
+}
+
+/* الوثائق والمقررات */
+.cards .card:nth-child(5) .card-icon {
+    background: #e5e1f1;
+    border-color: #d3cbea;
+}
+
+/* اتصل بالجماعة */
+.cards .card:nth-child(6) .card-icon {
+    background: #dce8f4;
+    border-color: #c7d9eb;
+}
+
+/* الأيقونات على الهاتف */
+@media (max-width: 600px) {
+    .cards .card-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 25px;
+        border-radius: 14px;
+        margin-bottom: 10px;
+    }
+}
