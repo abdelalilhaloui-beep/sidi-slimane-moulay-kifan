@@ -2936,3 +2936,148 @@ a.card:hover {
         transform: none;
     }
 }
+
+/* بطاقات مؤسساتية بألوان هادئة */
+.services {
+    background: #edf3ef;
+    padding: 55px 5%;
+}
+
+.cards {
+    gap: 22px;
+}
+
+.card,
+a.card {
+    background: #f4f7f3;
+    border: 1px solid #d8e4db;
+    border-top: 3px solid #c4a052;
+    border-radius: 18px;
+    padding: 27px 22px;
+    box-shadow: 0 7px 20px rgba(24, 65, 46, 0.07);
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.card:nth-child(even),
+a.card:nth-child(even) {
+    background: #f4f0e5;
+    border-color: #e5dac0;
+    border-top-color: #b9974b;
+}
+
+.card h3,
+a.card h3 {
+    color: #145c43;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.card p,
+a.card p {
+    color: #46574e;
+    line-height: 1.9;
+}
+
+.card a,
+a.card .card-link {
+    color: #8c6c28;
+    font-weight: 700;
+}
+
+.card:hover,
+a.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 13px 28px rgba(24, 65, 46, 0.12);
+}
+
+@media (max-width: 600px) {
+    .services {
+        padding: 32px 16px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card,
+    a.card {
+        padding: 20px 18px;
+        border-radius: 16px;
+    }
+
+    .card h3,
+    a.card h3 {
+        font-size: 19px;
+    }
+
+    .card p,
+    a.card p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .card:hover,
+    a.card:hover {
+        transform: none;
+    }
+}
+
+/* اختبار وتحديث نهائي لبطاقات الخدمات */
+.services .cards .card,
+.services .cards a.card,
+.cards .card,
+.cards a.card {
+    background: #e5eee7 !important;
+    border: 1px solid #c4d7c9 !important;
+    border-top: 4px solid #b9974b !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 24px rgba(20, 70, 48, 0.13) !important;
+    padding: 25px 22px !important;
+    color: #173f30 !important;
+}
+
+.services .cards .card h3,
+.services .cards a.card h3,
+.cards .card h3,
+.cards a.card h3 {
+    color: #145c43 !important;
+    font-weight: 800 !important;
+    font-size: 22px !important;
+}
+
+.services .cards .card p,
+.services .cards a.card p,
+.cards .card p,
+.cards a.card p {
+    color: #354b40 !important;
+    font-size: 16px !important;
+    line-height: 1.9 !important;
+}
+
+@media (max-width: 600px) {
+
+    .services .cards .card,
+    .services .cards a.card,
+    .cards .card,
+    .cards a.card {
+        padding: 20px 17px !important;
+        border-radius: 16px !important;
+    }
+
+    .services .cards .card h3,
+    .services .cards a.card h3,
+    .cards .card h3,
+    .cards a.card h3 {
+        font-size: 19px !important;
+    }
+
+    .services .cards .card p,
+    .services .cards a.card p,
+    .cards .card p,
+    .cards a.card p {
+        font-size: 15px !important;
+    }
+}
