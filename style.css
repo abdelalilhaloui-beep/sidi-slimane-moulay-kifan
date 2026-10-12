@@ -3081,3 +3081,60 @@ a.card:hover {
         font-size: 15px !important;
     }
 }
+
+/* تحسين وضوح بطاقات الخدمات */
+.cards .card,
+.cards a.card {
+    background: linear-gradient(145deg, #f1f6f1, #e4eee6) !important;
+    border: 1px solid #cbdccf !important;
+    border-top: 4px solid #bd963f !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 24px rgba(20, 70, 48, 0.09) !important;
+}
+
+/* عناوين البطاقات */
+.cards .card h3,
+.cards a.card h3 {
+    font-size: 23px !important;
+    line-height: 1.7 !important;
+    color: #145c43 !important;
+}
+
+/* وصف البطاقات */
+.cards .card p,
+.cards a.card p {
+    font-size: 17px !important;
+    line-height: 2 !important;
+    color: #354b40 !important;
+}
+
+/* روابط البطاقات */
+.cards .card a,
+.cards a.card {
+    font-weight: 700;
+}
+
+/* تأثير عند مرور المؤشر */
+@media (hover: hover) {
+
+    .cards .card:hover,
+    .cards a.card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 14px 30px rgba(20, 70, 48, 0.14) !important;
+    }
+}
+
+/* ضبط الهاتف */
+@media screen and (max-width: 600px) {
+
+    .cards .card h3,
+    .cards a.card h3 {
+        font-size: 20px !important;
+    }
+
+    .cards .card p,
+    .cards a.card p {
+        font-size: 15px !important;
+        line-height: 1.9 !important;
+    }
+}
