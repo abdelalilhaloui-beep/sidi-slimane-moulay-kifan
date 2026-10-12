@@ -2842,3 +2842,97 @@ header.header>nav a.active {
         flex-basis: 48px;
     }
 }
+
+/* ===== تحسين بطاقات خدمات الجماعة ===== */
+
+.services {
+    padding: 48px 5%;
+    background: linear-gradient(180deg, #f4f8f5, #eaf2ed);
+}
+
+.services h2 {
+    color: #145c43;
+    font-size: clamp(27px, 4vw, 34px);
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.cards {
+    gap: 20px;
+}
+
+.card,
+a.card {
+    box-sizing: border-box;
+    padding: 25px 20px;
+    min-height: 0;
+    border: 1px solid #dce9e0;
+    border-top: 3px solid #bd963f;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 5px 18px rgba(20, 70, 48, 0.07);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card h3,
+a.card h3 {
+    color: #145c43;
+    font-size: 21px;
+    line-height: 1.6;
+    margin: 12px 0 8px;
+}
+
+.card p,
+a.card p {
+    color: #46574e;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.card:hover,
+a.card:hover {
+    transform: translateY(-3px);
+    border-top-color: #145c43;
+    box-shadow: 0 10px 25px rgba(20, 70, 48, 0.12);
+}
+
+/* تحسين العرض على الهاتف */
+@media screen and (max-width: 600px) {
+    .services {
+        padding: 32px 16px;
+    }
+
+    .services h2 {
+        font-size: 27px;
+        margin-bottom: 12px;
+    }
+
+    .cards {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .card,
+    a.card {
+        padding: 19px 17px;
+        border-radius: 15px;
+    }
+
+    .card h3,
+    a.card h3 {
+        font-size: 19px;
+        margin: 8px 0 5px;
+    }
+
+    .card p,
+    a.card p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 8px;
+    }
+
+    .card:hover,
+    a.card:hover {
+        transform: none;
+    }
+}
